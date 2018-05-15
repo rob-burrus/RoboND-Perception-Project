@@ -31,7 +31,7 @@ The RANSAC (Random Sample Consensus) algorithm allows us to identity points in t
 
 ### Cluster Segmentation
 
-#### Euclidean CLustering
+#### Euclidean Clustering
 
 Using the PCL library function called EuclideanClusterExtraction() allow us to perform a DBSCAN cluster search on the 3D point cloud. THis algorithm does a good job of segmenting individual objects with no prior knowledge of what shape the objects may be, or how many objects may be in the scene. There are 3 parameters to set that define the maximum distance between points in a cluster, and the minimum and maximum cluster size. (project_template.py lines 123-136)
 
@@ -46,7 +46,11 @@ After cluster segmenting the target objects, the next step is to identify each c
 
 #### SVM
 
-Support Vector Machines are supervised machine learning algorithms that allows you to characterize the parameter space of your dataset into discrete classes. SVMs work by applying an iterative method to a training dataset, where each item in the training set is characterized by a feature vector and a label. After training a linear SVM on my HSV and surface normal features, the following confusion matrix was generated for our target objects:
+Support Vector Machines are supervised machine learning algorithms that allows you to characterize the parameter space of your dataset into discrete classes. SVMs work by applying an iterative method to a training dataset, where each item in the training set is characterized by a feature vector and a label. 
+
+Explain Training
+
+After training a linear SVM on my HSV and surface normal features, the following confusion matrix was generated for our target objects:
 
 ![confusion_matrix](confusion_matrix.png)
 
@@ -54,7 +58,13 @@ The trained SVM model is used to recognize objects from our clusters (project_te
 
 ## Pick and Place Setup
 
+In the 3 test scenarios, there is a different pick list of objects for the PR-2 to identify and pick up in a given order. 
 
+![world1](world1.png)
+
+![world2](world2.png)
+
+![world3](world3.png)
 
 ## Results and Analysis
 
