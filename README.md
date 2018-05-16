@@ -25,8 +25,6 @@ Noise due to external factors such as dust, humidity, or the presence of various
 
 RGB-D cameras provide feature rich and particularly dense point clouds, meaning more points are packed in per unit volume than, for example, a Lidar point cloud. Running computation on a full resolution point cloud can be slow and may not yield any improvement on results obtained using a more sparsely sampled point cloud. So, in many cases, it is advantageous to downsample the data. In particular, VoxelGrid Downsampling Filter is useful to derive a point cloud that has fewer points but still does a good job of representing the input point cloud as a whole. (project_template.py lines 76-85)
 
-![voxel](voxel.png)
-
 #### Pass Through Filtering
 
 Given prior information about the location of your target in the scene, a Pass Through Filter can remove useless data in the point cloud. Defining this region of interest allows us remove everything but the table and target objects. (project_template.py lines 90-100)
@@ -86,7 +84,7 @@ In the 3 test scenarios, there is a yaml file of pick list of objects for the PR
 
 ![world3](test3_labeled.png)
 
-
+The pipeline performs satisfactorily, but could be improved in several ways including. Better object recognition could be achieved in a number of ways including: collecting more training data, tuning SVM parameters, using a different machine learning algorithm altogether i.e. CNN, training on more features. Additionally, the filtering pipeline could be made robust to different scene configurations. As it is, this pipeline uses prior knowledge of the general target objects positions (table height) to filter unwanted data from the point cloud
 
 
 
